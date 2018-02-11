@@ -60,3 +60,6 @@ typings/
 # Intellij IDEA folder
 .idea/
 
+# Node
+package-lock.json
+
