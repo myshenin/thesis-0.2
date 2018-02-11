@@ -63,3 +63,6 @@ typings/
 # Node
 package-lock.json
 
+# Serverless directories
+.serverless
+
