@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: cd server/test && npm install
-      - run: cd server/src/t-sne && sls deploy --stage dev
+      - run: cd server/src/t-sne && sls deploy --stage dev && cd ../../test && npm run test:tsne
 
 workflows:
   version: 2
