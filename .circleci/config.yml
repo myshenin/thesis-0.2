@@ -1,0 +1,10 @@
+vesion: 2
+jobs:
+  server:
+    docker:
+      - image: myshenin/thesis:0.3
+    steps:
+      - checkout
+      - run: cd thesis/server/test && npm install
+      - run: npm run test
+
