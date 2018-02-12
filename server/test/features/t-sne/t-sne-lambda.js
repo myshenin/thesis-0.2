@@ -17,7 +17,7 @@ defineSupportCode(({Given, Then, When}) => {
     When('I invoke the t-SNE implementing lambda', () => {
         const lambda = new AWS.Lambda();
         const params = {
-            FunctionName: 'thesis-tsne-dev-t-sne',
+            FunctionName: 'tsne-dev-main',
             InvocationType: 'RequestResponse',
             Payload: JSON.stringify({
                 data: multidimensionalData,
