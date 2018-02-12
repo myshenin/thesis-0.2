@@ -10,6 +10,7 @@ jobs:
       - run: npm run test
 
 workflows:
+  version: 2
   check:
     jobs:
       - server
