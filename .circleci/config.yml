@@ -9,3 +9,8 @@ jobs:
       - run: cd thesis/server/test && npm install
       - run: npm run test
 
+workflows:
+  check:
+    jobs:
+      - server
+
