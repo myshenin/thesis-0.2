@@ -1,0 +1,11 @@
+service: tsne
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: eu-central-1
+
+functions:
+  main:
+    handler: handler.main
