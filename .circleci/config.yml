@@ -5,9 +5,8 @@ jobs:
       - image: myshenin/thesis:0.3
     steps:
       - checkout
-      - run: ls -a
-      - run: cd thesis/server/test && npm install
-      - run: npm run test
+      - run: cd server/test && npm install
+      - run: sls deploy --stage dev && npm run test:tsne && sls deploy --stage prod
 
 workflows:
   version: 2
