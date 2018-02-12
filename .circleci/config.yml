@@ -5,6 +5,7 @@ jobs:
       - image: myshenin/thesis:0.3
     steps:
       - checkout
+      - run: ls -a
       - run: cd thesis/server/test && npm install
       - run: npm run test
 
