@@ -11,7 +11,12 @@ jobs:
 
 workflows:
   version: 2
-  check:
+  integration:
     jobs:
       - server
-
+deployment:
+  staging:
+    branch: master
+    codedeploy:
+      myshenin.thesis:
+        deployment_group: my-deployment-group
