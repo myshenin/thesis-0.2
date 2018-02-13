@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumberjs ./features -r ./features",
-    "test:tsne": "cucumberjs ./features -r ./features --tags @tsne"
+    "test:tsne": "cucumberjs ./features -r ./features --tags @tsne",
+    "test:weather": "cucumberjs ./features -r ./features --tags @weather"
   },
   "author": "Anton Myshenin",
   "license": "MIT",
