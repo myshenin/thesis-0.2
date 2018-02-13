@@ -3,6 +3,7 @@ service: result
 provider:
   name: aws
   runtime: nodejs6.10
+  role: arn:aws:iam::088027860223:role/LambdaInvokeRole
 
   stage: dev
   region: eu-central-1
