@@ -20,6 +20,7 @@ workflows:
   integration:
     jobs:
       - server
+      - client
 deployment:
   staging:
     branch: master
