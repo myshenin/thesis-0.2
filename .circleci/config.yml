@@ -14,7 +14,7 @@ jobs:
       - image: myshenin/thesis:0.0
     steps:
       - checkout
-      - run: cd client && sudo npm install
+      - run: cd client && npm install
 workflows:
   version: 2
   integration:
