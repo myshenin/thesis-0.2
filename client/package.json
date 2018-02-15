@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "webpack -d && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -p",
+    "test": "cucumberjs ./test/features -r ./test"
   },
   "author": "Anton Myshenin",
   "license": "MIT",
