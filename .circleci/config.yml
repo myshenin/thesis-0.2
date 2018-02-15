@@ -11,7 +11,7 @@ jobs:
       - run: cd server/src/result && npm install && sls deploy --stage dev && cd ../../test && npm run test:result && cd ../src/result && sls deploy --stage prod
   client:
     docker:
-      - image: myshenin/thesis:0.4
+      - image: myshenin/thesis:0.0
     steps:
       - checkout
       - run: cd client && sudo npm install
