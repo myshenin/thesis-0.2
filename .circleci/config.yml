@@ -2,7 +2,7 @@ vesion: 2
 jobs:
   server:
     docker:
-      - image: myshenin/thesis:0.4
+      - image: myshenin/thesis:0.5
     steps:
       - checkout
       - run: cd server/test && npm install
