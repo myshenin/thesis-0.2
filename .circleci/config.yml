@@ -9,12 +9,24 @@ jobs:
       - run: cd server/src/t-sne &&
              npm install &&
              sls deploy --stage dev &&
-             cd ../../test && 
+             cd ../../test &&
              npm run test:tsne &&
              cd ../src/t-sne &&
              sls deploy --stage prod
-      - run: cd server/src/weather && npm install && sls deploy --stage dev && cd ../../test && npm run test:weather && cd ../src/weather && sls deploy --stage prod
-      - run: cd server/src/result && npm install && sls deploy --stage dev && cd ../../test && npm run test:result && cd ../src/result && sls deploy --stage prod
+      - run: cd server/src/weather &&
+              npm install &&
+              sls deploy --stage dev &&
+              cd ../../test &&
+              npm run test:weather &&
+              cd ../src/weather &&
+              sls deploy --stage prod
+      - run: cd server/src/result &&
+             npm install &&
+             sls deploy --stage dev &&
+             cd ../../test &&
+             npm run test:result &&
+             cd ../src/result &&
+             sls deploy --stage prod
   client:
     docker:
       - image: myshenin/thesis:0.0
