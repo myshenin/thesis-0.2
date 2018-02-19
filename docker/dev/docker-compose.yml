@@ -9,6 +9,7 @@ services:
       - ../../client:/client
       - client_node_modules:/client/node_modules
     command: bash -c "cd client && npm install && npm run build:dev"
+    tty: true
 
   server:
     image: myshenin/thesis:dev-server-0.0
@@ -21,7 +22,7 @@ services:
       - tsne_serverless:/server/src/t-sne/.serverless
       - weather_serverless:/server/src/weather/.serverless
       - result_serverless:/server/src/result/.serverless
-    command: bash
+    tty: true
 
 volumes:
   client_node_modules:
