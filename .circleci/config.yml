@@ -2,7 +2,7 @@ vesion: 2
 jobs:
   server:
     docker:
-      - image: myshenin/thesis:0.0
+      - image: myshenin/thesis:ci-server-0.0
     steps:
       - checkout
       - run: cd server/test && npm install
@@ -29,7 +29,7 @@ jobs:
              sls deploy --stage prod
   client:
     docker:
-      - image: myshenin/thesis:0.0
+      - image: myshenin/thesis:ci-client-0.0
     steps:
       - checkout
       - run: cd client && npm install
