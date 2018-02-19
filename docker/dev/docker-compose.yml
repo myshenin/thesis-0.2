@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  client:
+    image: myshenin/thesis:dev-client-0.0
+    ports:
+      - "5050:8080"
+    volumes:
+      - ../../client:/client
+      - client_node_modules:/client/node_modules
+    command: bash -c "cd client && npm install && npm run build:dev"
+
+  server:
+    image: myshenin/thesis:dev-server-0.0
+    volumes:
+      - ../../server:/server
+      - server_test_node_modules:/server/test/node_modules
+      - tsne_node_modules:/server/src/t-sne/node_modules
+      - weather_node_modules:/server/src/weather/node_modules
+      - result_node_modules:/server/src/result/node_modules
+      - tsne_serverless:/server/src/t-sne/.serverless
+      - weather_serverless:/server/src/weather/.serverless
+      - result_serverless:/server/src/result/.serverless
+    command: bash
+
+volumes:
+  client_node_modules:
+  server_test_node_modules:
+  tsne_node_modules:
+  weather_node_modules:
+  result_node_modules:
+  tsne_serverless:
+  weather_serverless:
+  result_serverless:
+
