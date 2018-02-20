@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "build:dev": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --host 0.0.0.0",
+    "build:dev": "webpack -d && webpack-dev-server --watch-poll --hot --host 0.0.0.0 --port 5050 --inline --content-base src/",
     "build:prod": "webpack -p",
     "test": "cucumberjs ./test/features -r ./test"
   },

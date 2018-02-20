@@ -41,7 +41,7 @@ const config = {
                 from: './src/index.html',
                 to: './index.html',
             },
-        ]),
+        ])
     ],
     resolve: {
         extensions: ['.js', '.jsx'],
