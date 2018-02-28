@@ -2,3 +2,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.container {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 6fr 5.5fr 1fr;
+  grid-template-rows: 1fr 1fr 7fr 1fr 1.5fr 1fr;
+}
