@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import LocationMap from "../components/LocationMap";
 import chooseLocation from "../redux/reducers/location/actions/chooseLocation";
+import MobileTabs from "../components/MobileTabs";
 
 class App extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
                     chooseLocation={this.props.chooseLocation}
                     location={this.props.location}
                 />
+                <MobileTabs/>
             </div>
         );
     }
