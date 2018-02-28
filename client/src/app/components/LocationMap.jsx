@@ -21,8 +21,8 @@ const LocationMap = compose(
     withScriptjs,
     withGoogleMap
 )((props) => <GoogleMap
-        defaultZoom={8}
-        defaultCenter={{lat: -34.397, lng: 150.644}}
+        defaultZoom={5}
+        defaultCenter={props.location}
         onClick={chooseLocation(props.chooseLocation)}
     >
         <Marker position={props.location}/>
