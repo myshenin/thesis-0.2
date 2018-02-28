@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import LocationMap from "../components/LocationMap";
+import chooseLocation from "../redux/reducers/location/actions/chooseLocation";
 
 class App extends React.Component {
     constructor(props) {
@@ -9,18 +11,25 @@ class App extends React.Component {
     render() {
         return (
             <div className="container">
-155
+                <LocationMap
+                    chooseLocation={this.props.chooseLocation}
+                    location={this.props.location}
+                />
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
-    return {};
+    return {location: state.location};
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        chooseLocation: (payload) => {
+            dispatch(chooseLocation(payload));
+        }
+    }
 };
 
 
