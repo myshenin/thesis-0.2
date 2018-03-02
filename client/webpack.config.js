@@ -41,6 +41,10 @@ const config = {
                 from: './src/index.html',
                 to: './index.html',
             },
+            {
+                from: './assets/img/*',
+                to: '.'
+            }
         ])
     ],
     resolve: {
