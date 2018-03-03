@@ -7,6 +7,7 @@ import changeTab from "../redux/reducers/tabs/actions/changeTab";
 import PeriodsPicker from "../components/PeriodsPicker";
 import setStartDate from "../redux/reducers/periods/actions/setStartDate";
 import setEndDate from "../redux/reducers/periods/actions/setEndDate";
+import StartButton from "../components/StartButton";
 
 function arraysEqual(a, b) {
     if (a === b) return true;
@@ -54,6 +55,7 @@ class App extends React.Component {
                     setEndDate={this.props.setEndDate}
                     periods={this.props.periods}
                 />}
+                <StartButton/>
                 <MobileTabs
                     changeTab={this.props.changeTab}
                     tabs={this.props.tabs}
