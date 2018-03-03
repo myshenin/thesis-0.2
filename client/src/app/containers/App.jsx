@@ -4,6 +4,7 @@ import LocationMap from "../components/LocationMap";
 import chooseLocation from "../redux/reducers/location/actions/chooseLocation";
 import MobileTabs from "../components/MobileTabs";
 import changeTab from "../redux/reducers/tabs/actions/changeTab";
+import PeriodsPicker from "../components/PeriodsPicker";
 
 function arraysEqual(a, b) {
     if (a === b) return true;
@@ -25,8 +26,14 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        if (parseInt(window.innerWidth) < 768) {
+            this.props.changeTab([true, false, false]);
+        } else {
+            this.props.changeTab([true, true, true]);
+        }
+
         window.addEventListener("resize", () => {
-            if ((parseInt(window.innerWidth) < 768)){
+            if ((parseInt(window.innerWidth) < 768)) {
                 if (arraysEqual(this.props.tabs, [true, true, true])) {
                     this.props.changeTab([true, false, false]);
                 }
@@ -43,6 +50,7 @@ class App extends React.Component {
                     chooseLocation={this.props.chooseLocation}
                     location={this.props.location}
                 />}
+                {this.props.tabs[1] && <PeriodsPicker/>}
                 <MobileTabs
                     changeTab={this.props.changeTab}
                     tabs={this.props.tabs}
