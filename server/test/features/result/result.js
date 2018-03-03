@@ -22,7 +22,7 @@ defineSupportCode(({Given, Then, When}) => {
     When('I make an HTTP POST request', () => {
         return request({
             method: 'POST',
-            uri: 'https://ypwzyhs2ai.execute-api.eu-central-1.amazonaws.com/dev/weather',
+            uri: 'https://bs1zbyr9hi.execute-api.eu-central-1.amazonaws.com/dev/weather',
             body,
             json: true
         })

@@ -8,6 +8,7 @@ import PeriodsPicker from "../components/PeriodsPicker";
 import setStartDate from "../redux/reducers/periods/actions/setStartDate";
 import setEndDate from "../redux/reducers/periods/actions/setEndDate";
 import StartButton from "../components/StartButton";
+import getData from "../redux/reducers/weather/actions/getData";
 
 function arraysEqual(a, b) {
     if (a === b) return true;
@@ -55,7 +56,11 @@ class App extends React.Component {
                     setEndDate={this.props.setEndDate}
                     periods={this.props.periods}
                 />}
-                <StartButton/>
+                <StartButton
+                    getData={this.props.getData}
+                    location={this.props.location}
+                    periods={this.props.periods}
+                />
                 <MobileTabs
                     changeTab={this.props.changeTab}
                     tabs={this.props.tabs}
@@ -70,6 +75,7 @@ const mapStateToProps = state => {
         location: state.location,
         tabs: state.tabs,
         periods: state.periods,
+        weather: state.weather
     };
 };
 
@@ -86,6 +92,9 @@ const mapDispatchToProps = dispatch => {
         },
         setEndDate: (payload) => {
             dispatch(setEndDate(payload));
+        },
+        getData: (payload) => {
+            dispatch(getData(payload));
         }
     }
 };
