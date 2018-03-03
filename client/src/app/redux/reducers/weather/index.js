@@ -1,7 +1,7 @@
 const weather = (state = [], action) => {
     switch(action.type) {
         case 'GET_DATA_FULFILLED': {
-            state = action.payload;
+            state = action.payload.data;
         } break;
     }
     return state;
