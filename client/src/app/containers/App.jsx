@@ -5,14 +5,13 @@ import chooseLocation from "../redux/reducers/location/actions/chooseLocation";
 import MobileTabs from "../components/MobileTabs";
 import changeTab from "../redux/reducers/tabs/actions/changeTab";
 import PeriodsPicker from "../components/PeriodsPicker";
+import setStartDate from "../redux/reducers/periods/actions/setStartDate";
+import setEndDate from "../redux/reducers/periods/actions/setEndDate";
 
 function arraysEqual(a, b) {
     if (a === b) return true;
     if (a === null || b === null) return false;
     if (a.length !== b.length) return false;
-
-    // If you don't care about the order of the elements inside
-    // the array, you should sort both arrays here.
 
     for (let i = 0; i < a.length; ++i) {
         if (a[i] !== b[i]) return false;
@@ -50,7 +49,11 @@ class App extends React.Component {
                     chooseLocation={this.props.chooseLocation}
                     location={this.props.location}
                 />}
-                {this.props.tabs[1] && <PeriodsPicker/>}
+                {this.props.tabs[1] && <PeriodsPicker
+                    setStartDate={this.props.setStartDate}
+                    setEndDate={this.props.setEndDate}
+                    periods={this.props.periods}
+                />}
                 <MobileTabs
                     changeTab={this.props.changeTab}
                     tabs={this.props.tabs}
@@ -64,6 +67,7 @@ const mapStateToProps = state => {
     return {
         location: state.location,
         tabs: state.tabs,
+        periods: state.periods,
     };
 };
 
@@ -74,6 +78,12 @@ const mapDispatchToProps = dispatch => {
         },
         changeTab: (payload) => {
             dispatch(changeTab(payload));
+        },
+        setStartDate: (payload) => {
+            dispatch(setStartDate(payload));
+        },
+        setEndDate: (payload) => {
+            dispatch(setEndDate(payload));
         }
     }
 };
