@@ -34,6 +34,7 @@
     "@fortawesome/fontawesome-free-regular": "^5.0.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "@fortawesome/react-fontawesome": "0.0.17",
+    "axios": "^0.18.0",
     "moment": "^2.21.0",
     "react": "^16.2.0",
     "react-datepicker": "^1.2.2",
