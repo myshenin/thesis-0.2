@@ -60,9 +60,6 @@ module.exports.main = ({body}, context, callback) => {
         .then(result => {
             const response = {
                 statusCode: 200,
-                headers: {
-                  'Access-Control-Allow-Origin': '*'
-                },
                 body: JSON.stringify(result),
             };
 
