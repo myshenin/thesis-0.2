@@ -5,7 +5,7 @@ const StartButton = (props) => {
         <div className="start-button">
             <button onClick={props.getData.bind(null, {
                 location: props.location,
-                periods: props.periods
+                periods: props.periods.filter(period => period.start && period.end)
             })}>ПУСК</button>
         </div>
     );
