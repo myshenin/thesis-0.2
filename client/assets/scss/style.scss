@@ -165,4 +165,7 @@ body {
     grid-column: 1/7;
     grid-row: 1/7;
   }
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 14.5fr 1fr;
 }

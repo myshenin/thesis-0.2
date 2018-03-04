@@ -70,6 +70,7 @@ class App extends React.Component {
                 />}
                 {this.props.tabs[2] && this.props.inputOutputSwitcher._output && <Output
                     inputOutputSwitch={this.props.inputOutputSwitch}
+                    weather={this.props.weather}
                 />}
                 {this.props.inputOutputSwitcher._input && <StartButton
                     getData={this.props.getData}
