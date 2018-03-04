@@ -168,4 +168,13 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 2fr 14.5fr 1fr;
+
+  .chart {
+    @media screen and (max-width: 768px) {
+      grid-column: 1/5;
+    }
+    @media screen and (min-width: 768px) {
+      grid-column: 2/4;
+    }
+  }
 }
