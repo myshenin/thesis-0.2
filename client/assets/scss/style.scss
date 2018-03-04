@@ -155,3 +155,14 @@ body {
     }
   }
 }
+
+.output {
+  @media screen and (max-width: 768px) {
+    grid-column: 1/7;
+    grid-row: 3/7;
+  }
+  @media screen and (min-width: 768px) {
+    grid-column: 1/7;
+    grid-row: 1/7;
+  }
+}

@@ -23,6 +23,10 @@ const MobileTabs = (props) => {
                     location: props.location,
                     periods: props.periods.filter(period => period.start && period.end)
                 });
+                props.inputOutputSwitch({
+                    width: props.inputOutputSwitcher.width,
+                    mode: 'OUTPUT'
+                });
             }}>
                 <FontAwesomeIcon icon={faPlay} size="lg"/>
                 <div>Результат</div>

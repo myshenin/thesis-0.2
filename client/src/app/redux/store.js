@@ -7,9 +7,10 @@ import location from './reducers/location';
 import tabs from "./reducers/tabs";
 import periods from "./reducers/periods";
 import weather from "./reducers/weather";
+import inputOutputSwitcher from "./reducers/input-output-switcher";
 
 export default createStore(
-    combineReducers({location, tabs, periods, weather}),
+    combineReducers({location, tabs, periods, weather, inputOutputSwitcher}),
     {},
     applyMiddleware(createLogger(), thunk, promise()),
 );

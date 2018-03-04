@@ -9,6 +9,8 @@ import setStartDate from "../redux/reducers/periods/actions/setStartDate";
 import setEndDate from "../redux/reducers/periods/actions/setEndDate";
 import StartButton from "../components/StartButton";
 import getData from "../redux/reducers/weather/actions/getData";
+import Output from "../components/Output";
+import inputOutputSwitch from "../redux/reducers/input-output-switcher/actions/inputOutpuSwitch";
 
 function arraysEqual(a, b) {
     if (a === b) return true;
@@ -27,6 +29,11 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        this.props.inputOutputSwitch({
+            width: window.innerWidth,
+            mode: 'INPUT'
+        });
+
         if (parseInt(window.innerWidth) < 768) {
             this.props.changeTab([true, false, false]);
         } else {
@@ -34,6 +41,11 @@ class App extends React.Component {
         }
 
         window.addEventListener("resize", () => {
+            this.props.inputOutputSwitch({
+                width: window.innerWidth,
+                mode: this.props.inputOutputSwitcher.mode
+            });
+
             if ((parseInt(window.innerWidth) < 768)) {
                 if (arraysEqual(this.props.tabs, [true, true, true])) {
                     this.props.changeTab([true, false, false]);
@@ -47,20 +59,25 @@ class App extends React.Component {
     render() {
         return (
             <div className="container">
-                {this.props.tabs[0] && <LocationMap
+                {this.props.tabs[0] && this.props.inputOutputSwitcher._input &&  <LocationMap
                     chooseLocation={this.props.chooseLocation}
                     location={this.props.location}
                 />}
-                {this.props.tabs[1] && <PeriodsPicker
+                {this.props.tabs[1] && this.props.inputOutputSwitcher._input && <PeriodsPicker
                     setStartDate={this.props.setStartDate}
                     setEndDate={this.props.setEndDate}
                     periods={this.props.periods}
                 />}
-                <StartButton
+                {this.props.tabs[2] && this.props.inputOutputSwitcher._output && <Output
+                    inputOutputSwitch={this.props.inputOutputSwitch}
+                />}
+                {this.props.inputOutputSwitcher._input && <StartButton
                     getData={this.props.getData}
+                    inputOutputSwitch={this.props.inputOutputSwitch}
+                    inputOutputSwitcher={this.props.inputOutputSwitcher}
                     location={this.props.location}
                     periods={this.props.periods}
-                />
+                />}
                 <MobileTabs
                     changeTab={this.props.changeTab}
                     tabs={this.props.tabs}
@@ -68,6 +85,9 @@ class App extends React.Component {
                     getData={this.props.getData}
                     location={this.props.location}
                     periods={this.props.periods}
+
+                    inputOutputSwitcher={this.props.inputOutputSwitcher}
+                    inputOutputSwitch={this.props.inputOutputSwitch}
                 />
             </div>
         );
@@ -79,7 +99,8 @@ const mapStateToProps = state => {
         location: state.location,
         tabs: state.tabs,
         periods: state.periods,
-        weather: state.weather
+        weather: state.weather,
+        inputOutputSwitcher: state.inputOutputSwitcher
     };
 };
 
@@ -99,7 +120,10 @@ const mapDispatchToProps = dispatch => {
         },
         getData: (payload) => {
             dispatch(getData(payload));
-        }
+        },
+        inputOutputSwitch: (payload) => {
+            dispatch(inputOutputSwitch(payload));
+        },
     }
 };
 
