@@ -22,9 +22,7 @@ const TSNEChart = (props) => {
                     <XAxis dataKey={'x'} type="number" name='x'/>
                     <YAxis dataKey={'y'} type="number" name='y'/>
                     <CartesianGrid />
-                    <Scatter name='TSNE data' data={[{x: 100, y: 200, z: 200}, {x: 120, y: 100, z: 260},
-                        {x: 170, y: 300, z: 400}, {x: 140, y: 250, z: 280},
-                        {x: 150, y: 400, z: 500}, {x: 110, y: 280, z: 200}]} fill={getRandomColor()}/>
+                    <Scatter name='TSNE data' data={props.data} fill={getRandomColor()}/>
                 </ScatterChart>
             </ResponsiveContainer>
         </div>

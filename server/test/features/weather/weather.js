@@ -43,6 +43,6 @@ defineSupportCode(({Given, Then, When}) => {
     });
 
     Then('I get t-SNE ready weather data', () => {
-        assert(stats.some(day => Array.isArray(day) && day.some(hour => Array.isArray(hour))), "ERROR: weather data is not properly formatted");
+        assert(stats.some(stat => Array.isArray(stat)), "ERROR: weather data is not properly formatted");
     });
 });
