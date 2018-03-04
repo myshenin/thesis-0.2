@@ -7,4 +7,4 @@ Feature: Result lambda
     Then I get a response summary
     Examples:
       | location            | start 1    | end 1      | start 2    | end 2      |
-      | 48.856614,2.3522219 | 2016-05-05 | 2016-06-05 | 2017-05-05 | 2017-06-05 |
+      | 48.856614,2.3522219 | 2016-05-05 | 2016-05-14 | 2017-05-05 | 2017-05-14 |

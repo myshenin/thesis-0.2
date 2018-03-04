@@ -15,14 +15,20 @@ defineSupportCode(({Given, Then, When}) => {
                 lat: string.split(',')[0],
                 lng: string.split(',')[1],
             },
-            periods: [[string2, string3], [string4, string5]]
+            periods: [{
+                start: string2,
+                end: string3
+            }, {
+                start: string4,
+                end: string5
+            }]
         };
     });
 
     When('I make an HTTP POST request', () => {
         return request({
             method: 'POST',
-            uri: 'https://bs1zbyr9hi.execute-api.eu-central-1.amazonaws.com/dev/weather',
+            uri: 'https://hvwpq7md22.execute-api.eu-central-1.amazonaws.com/dev/weather',
             body,
             json: true
         })
@@ -32,7 +38,7 @@ defineSupportCode(({Given, Then, When}) => {
     });
 
     Then('I get a response summary', () => {
-        assert(Array.isArray(result) && result.some(period => Array.isArray(period) && period.some(day => Array.isArray(day) && day.some(hour => Array.isArray(hour)))),
+        assert(Array.isArray(result) && result.some(period => Array.isArray(period) && period.some(day => Array.isArray(day))),
             "ERROR: result is not formatted in the proper way");
     });
 });
