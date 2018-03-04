@@ -25,7 +25,7 @@ defineSupportCode(({Given, Then, When}) => {
         };
     });
 
-    When('I make an HTTP POST request', () => {
+    When('I make an HTTP POST request', {timeout: 10 * 1000}, () => {
         return request({
             method: 'POST',
             uri: 'https://hvwpq7md22.execute-api.eu-central-1.amazonaws.com/dev/weather',
