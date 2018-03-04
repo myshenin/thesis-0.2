@@ -21,7 +21,9 @@ const MobileTabs = (props) => {
                 props.changeTab([false, false, true]);
                 props.getData({
                     location: props.location,
-                    periods: props.periods.filter(period => period.start && period.end)
+                    periods: props.periods
+                        .filter(period => period.start && period.end)
+                        .map(period => ({start: period.start.format('YYYY-MM-DD'), end: period.end.format('YYYY-MM-DD')}))
                 });
                 props.inputOutputSwitch({
                     width: props.inputOutputSwitcher.width,
