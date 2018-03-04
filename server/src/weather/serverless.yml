@@ -9,7 +9,3 @@ provider:
 functions:
   main:
     handler: handler.main
-    events:
-          - http:
-              path: weather
-              method: post
