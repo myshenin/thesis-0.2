@@ -64,6 +64,10 @@ class App extends React.Component {
                 <MobileTabs
                     changeTab={this.props.changeTab}
                     tabs={this.props.tabs}
+
+                    getData={this.props.getData}
+                    location={this.props.location}
+                    periods={this.props.periods}
                 />
             </div>
         );
