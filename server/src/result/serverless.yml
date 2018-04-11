@@ -9,9 +9,10 @@ provider:
   region: eu-central-1
 
 functions:
-  main:
+  result:
     handler: handler.main
     events:
       - http:
-          path: weather
+          path: result
           method: post
+          cors: true

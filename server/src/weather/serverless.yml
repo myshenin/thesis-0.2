@@ -1,4 +1,5 @@
 service: weather
+
 provider:
   name: aws
   runtime: nodejs6.10
@@ -7,5 +8,5 @@ provider:
   region: eu-central-1
 
 functions:
-  main:
+  weather:
     handler: handler.main

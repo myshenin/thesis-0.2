@@ -1,7 +1,7 @@
 {
   "name": "result",
   "version": "0.0.0",
-  "description": "Lambda returning a points for t-SNE graph",
+  "description": "Result lambda",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,6 @@
   "author": "Anton Myshenin",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.193.0"
+    "aws-sdk": "^2.213.1"
   }
 }

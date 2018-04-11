@@ -1,7 +1,7 @@
 {
-  "name": "t-sne",
+  "name": "tsne",
   "version": "0.0.0",
-  "description": "Lambda tranforming multidimensional data to 2-dimensional with t-SNE",
+  "description": "t-SNE lambda",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
